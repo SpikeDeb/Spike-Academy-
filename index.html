@@ -15,7 +15,7 @@
                         secondary: '#1e40af', 
                         dark: '#0f172a',
                         whatsapp: '#25D366', 
-                        accent: '#fbbf24', // Yellow for highlights
+                        accent: '#fbbf24', 
                     }
                 }
             }
@@ -54,6 +54,12 @@
             70% { box-shadow: 0 0 0 10px rgba(251, 191, 36, 0); }
             100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); }
         }
+        /* Styling Razorpay button container to look integrated */
+        .rzp-container form {
+            margin: 0 !important;
+            display: flex;
+            justify-content: center;
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800 antialiased flex flex-col min-h-screen">
@@ -67,7 +73,7 @@
             </div>
             <div class="hidden md:flex items-center space-x-3 bg-green-50 px-4 py-1.5 rounded-full border border-green-200">
                 <i class="fa-solid fa-certificate text-green-600"></i>
-                <span class="text-[11px] font-extrabold text-green-700 uppercase tracking-widest">MSME Registered - Govt. of India</span>
+                <span class="text-[11px] font-extrabold text-green-700 uppercase tracking-widest">MSME Registered</span>
             </div>
             <a href="#pricing" class="bg-primary hover:bg-secondary text-white px-5 py-2 rounded-lg font-semibold transition duration-300 shadow-md">
                 Enroll Now
@@ -76,17 +82,20 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="bg-dark text-white py-16 md:py-24 relative overflow-hidden">
+    <header class="bg-dark text-white py-16 md:py-20 relative overflow-hidden">
         <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-dark to-dark"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             
-            <!-- Trust & Highlight Badges -->
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
-                <span class="bg-accent text-yellow-900 text-sm font-black px-5 py-2 rounded-full uppercase tracking-wide border-2 border-yellow-500 pulse-badge shadow-[0_0_15px_rgba(251,191,36,0.5)]">
-                    <i class="fa-solid fa-mobile-screen-button text-lg mr-1"></i> NO LAPTOP REQUIRED
+            <!-- Highlight Badges -->
+            <div class="flex flex-wrap justify-center items-center gap-3 mb-6">
+                <span class="bg-accent text-yellow-900 text-sm font-black px-4 py-1.5 rounded-full uppercase tracking-wide border-2 border-yellow-500 pulse-badge shadow-[0_0_15px_rgba(251,191,36,0.5)]">
+                    <i class="fa-solid fa-mobile-screen-button mr-1"></i> NO LAPTOP REQUIRED
                 </span>
-                <span class="bg-blue-900/80 text-blue-200 text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide border border-blue-700 backdrop-blur-sm">
-                    <i class="fa-solid fa-bullseye mr-1"></i> Target 4+ LPA Salary
+                <span class="bg-blue-900/80 text-blue-200 text-sm font-bold px-4 py-1.5 rounded-full uppercase tracking-wide border border-blue-700">
+                    <i class="fa-solid fa-stopwatch mr-1"></i> 7-Day Fast Track
+                </span>
+                <span class="bg-green-900/80 text-green-200 text-sm font-bold px-4 py-1.5 rounded-full uppercase tracking-wide border border-green-700">
+                    <i class="fa-solid fa-award mr-1"></i> Certified Program
                 </span>
             </div>
             
@@ -95,20 +104,21 @@
                 <span class="text-primary bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-primary">Pay ₹0 Until You Get Placed.</span>
             </h1>
             <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-medium">
-                Learn to code directly from your smartphone using AI. Build premium websites, crack MNC interviews, and pay the tuition fee ONLY after you secure a job!
+                Learn directly from your smartphone. Build projects, crack interviews, get certified, and pay <strong class="text-white bg-blue-600/30 px-2 py-1 rounded">only 18% of your 1st month's salary</strong> AFTER you get a job!
             </p>
             
-            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-5">
-                <!-- Razorpay Button -->
-                <a href="#pricing" class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-xl font-bold text-lg transition duration-300 shadow-lg shadow-blue-500/40 flex items-center justify-center transform hover:-translate-y-1">
-                    Book Seat For ₹99 <i class="fa-solid fa-arrow-right ml-2"></i>
-                </a>
+            <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-5">
+                <!-- Razorpay Live Button Wrapped Beautifully -->
+                <div class="rzp-container bg-white/10 p-2 rounded-xl backdrop-blur-sm border border-white/20 transform hover:-translate-y-1 transition duration-300 shadow-[0_0_20px_rgba(37,99,235,0.4)]">
+                    <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_TPWPK1B8DWJCrQ" async> </script> </form>
+                </div>
+                
                 <!-- WhatsApp Channel Button -->
-                <a href="https://whatsapp.com/channel/0029Vb96DrJ0rGiVjFVrfm1Q" target="_blank" class="bg-whatsapp hover:bg-green-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition duration-300 shadow-lg shadow-green-500/30 flex items-center justify-center">
+                <a href="https://whatsapp.com/channel/0029Vb96DrJ0rGiVjFVrfm1Q" target="_blank" class="bg-whatsapp hover:bg-green-600 text-white px-8 py-[14px] rounded-xl font-bold text-lg transition duration-300 shadow-lg shadow-green-500/30 flex items-center justify-center">
                     <i class="fa-brands fa-whatsapp text-2xl mr-2"></i> Join WhatsApp
                 </a>
             </div>
-            <p class="mt-6 text-sm text-gray-400 font-medium"><i class="fa-solid fa-bolt text-yellow-400 mr-1"></i> Fast-Track Batch Starts Sunday | Only 20 Seats</p>
+            <p class="mt-6 text-sm text-gray-400 font-medium"><i class="fa-solid fa-bolt text-yellow-400 mr-1"></i> Only 20 Seats. Pay ₹99 Starter Fee to Book.</p>
         </div>
     </header>
 
@@ -121,28 +131,28 @@
                         <i class="fa-solid fa-mobile-screen text-3xl"></i>
                     </div>
                     <h3 class="font-bold text-lg">Smartphone Friendly</h3>
-                    <p class="text-sm text-gray-500 mt-2">Special environment setup to learn and write code directly on your mobile.</p>
+                    <p class="text-sm text-gray-500 mt-2">Special environment to learn and write code directly on your mobile.</p>
                 </div>
                 <div class="p-4 rounded-xl hover:bg-gray-50 transition duration-300">
                     <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
-                        <i class="fa-solid fa-robot text-3xl"></i>
+                        <i class="fa-solid fa-calendar-check text-3xl"></i>
                     </div>
-                    <h3 class="font-bold text-lg">AI-Powered Curriculum</h3>
-                    <p class="text-sm text-gray-500 mt-2">Learn modern tools like ChatGPT & Claude to build websites 10x faster.</p>
+                    <h3 class="font-bold text-lg">7-Day Bootcamp</h3>
+                    <p class="text-sm text-gray-500 mt-2">Master modern tools like ChatGPT & Tailwind to build websites fast.</p>
                 </div>
                 <div class="p-4 rounded-xl hover:bg-gray-50 transition duration-300">
                     <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
-                        <i class="fa-solid fa-briefcase text-3xl"></i>
+                        <i class="fa-solid fa-award text-3xl"></i>
                     </div>
-                    <h3 class="font-bold text-lg">100% Placement Support</h3>
-                    <p class="text-sm text-gray-500 mt-2">Resume building, mock interviews, and direct referrals to top tech companies.</p>
+                    <h3 class="font-bold text-lg">Govt. Verified Certificate</h3>
+                    <p class="text-sm text-gray-500 mt-2">Get an industry-recognized certificate after successful completion.</p>
                 </div>
                 <div class="p-4 rounded-xl hover:bg-gray-50 transition duration-300">
                     <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
                         <i class="fa-solid fa-file-signature text-3xl"></i>
                     </div>
-                    <h3 class="font-bold text-lg">Zero Financial Risk</h3>
-                    <p class="text-sm text-gray-500 mt-2">Sign a transparent ISA. No hidden charges. Pay only when you earn.</p>
+                    <h3 class="font-bold text-lg">Legal ISA Agreement</h3>
+                    <p class="text-sm text-gray-500 mt-2">Transparent policy: Pay exactly 18% of your first salary only after placement.</p>
                 </div>
             </div>
         </div>
@@ -155,41 +165,45 @@
                 
                 <!-- Flash Sale Tag -->
                 <div class="absolute top-0 right-0 bg-gradient-to-r from-red-600 to-red-500 text-white text-sm font-black px-6 py-2 rounded-bl-2xl z-10 shadow-[0_4px_15px_rgba(239,68,68,0.5)]">
-                    🔥 24-HOUR FLASH OFFER
+                    🔥 SEATS FILLING FAST
                 </div>
                 
                 <div class="p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-10">
                     <div class="flex-1">
-                        <span class="bg-blue-600/30 text-blue-300 text-xs font-bold px-3 py-1 rounded-md uppercase tracking-widest mb-4 inline-block border border-blue-500/50">
-                            Step 1: Registration
-                        </span>
                         <h2 class="text-3xl md:text-5xl font-black mb-3">AI Web Developer <br><span class="text-primary">Starter Pack</span></h2>
                         
+                        <!-- Course Fee Callout -->
+                        <div class="mb-6 bg-blue-900/40 border border-blue-500/30 rounded-lg p-3 inline-block">
+                            <span class="text-blue-200 font-bold"><i class="fa-solid fa-info-circle mr-1"></i> Course Tuition Fee:</span> 
+                            <span class="text-white font-extrabold ml-1">18% of your 1st Month Salary (Post Placement)</span>
+                        </div>
+
                         <!-- Psychological Pricing -->
-                        <div class="flex items-end gap-3 mb-6 bg-gray-800/50 p-4 rounded-xl border border-gray-700 inline-flex">
+                        <div class="flex items-end gap-3 mb-6 bg-gray-800/80 p-4 rounded-xl border border-gray-600 inline-flex">
                             <div class="flex flex-col">
-                                <span class="text-gray-400 text-sm font-bold uppercase">Actual Value</span>
-                                <span class="text-gray-500 text-3xl line-through decoration-red-500 decoration-4 font-bold">₹3,999</span>
+                                <span class="text-gray-400 text-sm font-bold uppercase">Starter Pack Value</span>
+                                <span class="text-gray-500 text-2xl line-through decoration-red-500 decoration-3 font-bold">₹3,999</span>
                             </div>
                             <div class="flex flex-col ml-4">
-                                <span class="text-green-400 text-sm font-bold uppercase animate-pulse">Today's Price</span>
-                                <span class="text-green-400 text-5xl font-black">₹99</span>
+                                <span class="text-green-400 text-sm font-bold uppercase animate-pulse">Pay Today Only</span>
+                                <span class="text-green-400 text-4xl font-black">₹99</span>
                             </div>
                         </div>
                         
-                        <p class="text-gray-300 mb-6 font-medium text-lg">Secure your seat for the upcoming batch and unlock instant access to:</p>
-                        
                         <ul class="space-y-4 mb-8 text-left text-gray-200 font-semibold">
-                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-green-400 mt-1 mr-3 text-xl drop-shadow-md"></i> <div>Guaranteed Seat in Live AI Web Dev Batch</div></li>
-                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-green-400 mt-1 mr-3 text-xl drop-shadow-md"></i> <div>"Mobile Coding Mastery" Setup Guide</div></li>
-                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-green-400 mt-1 mr-3 text-xl drop-shadow-md"></i> <div>50+ ChatGPT Prompts for Fast Coding</div></li>
-                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-green-400 mt-1 mr-3 text-xl drop-shadow-md"></i> <div>Legal E-Stamping & Account Setup</div></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-green-400 mt-1 mr-3 text-xl drop-shadow-md"></i> <div>Guaranteed Seat in 7-Day Live Batch</div></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-green-400 mt-1 mr-3 text-xl drop-shadow-md"></i> <div>Verified Certificate of Completion</div></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-green-400 mt-1 mr-3 text-xl drop-shadow-md"></i> <div>50+ ChatGPT Prompts & Mobile Coding Guide</div></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-green-400 mt-1 mr-3 text-xl drop-shadow-md"></i> <div>Legal E-Stamping & Account Setup Process</div></li>
                         </ul>
-                        <!-- Razorpay Payment Link -->
-                        <a href="YOUR_RAZORPAY_LINK_HERE" class="inline-block w-full text-center bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white font-black py-5 px-8 rounded-xl text-xl transition duration-300 shadow-[0_0_20px_rgba(34,197,94,0.4)] transform hover:scale-[1.02]">
-                            Unlock Complete Pack For ₹99
-                        </a>
-                        <p class="text-sm text-gray-400 text-center mt-5 font-medium"><i class="fa-solid fa-shield-check text-primary mr-1"></i> 100% Safe & Secure Payment via Razorpay</p>
+                        
+                        <!-- Razorpay Checkout Integration Box -->
+                        <div class="mt-4 p-4 bg-gray-800 rounded-2xl border-2 border-green-500/50 flex flex-col items-center justify-center">
+                            <p class="text-sm text-gray-300 font-bold mb-3 uppercase tracking-wider text-center">👇 Secure Checkout (100% Safe) 👇</p>
+                            <div class="rzp-container w-full bg-white rounded-lg p-1">
+                                <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_TPWPK1B8DWJCrQ" async> </script> </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -199,13 +213,13 @@
     <!-- Marquee Ticker (Smart/Legal Copy) -->
     <div class="marquee-container bg-white">
         <div class="marquee-content">
-            <div class="marquee-item"><i class="fa-solid fa-rocket text-primary mr-2"></i> Prepare for roles like Frontend Developer, Web Designer, AI Engineer</div>
+            <div class="marquee-item"><i class="fa-solid fa-rocket text-primary mr-2"></i> Prepare for roles like Frontend Developer & AI Web Engineer</div>
             <div class="marquee-item"><i class="fa-solid fa-building text-primary mr-2"></i> Curriculum tailored for top MNCs and Startups</div>
             <div class="marquee-item"><i class="fa-solid fa-laptop-code text-primary mr-2"></i> Master HTML, Tailwind, JavaScript & AI Tools</div>
             <div class="marquee-item"><i class="fa-solid fa-chart-line text-primary mr-2"></i> Average targeted packages: 4 LPA to 8 LPA</div>
             
             <!-- Duplicated for loop -->
-            <div class="marquee-item"><i class="fa-solid fa-rocket text-primary mr-2"></i> Prepare for roles like Frontend Developer, Web Designer, AI Engineer</div>
+            <div class="marquee-item"><i class="fa-solid fa-rocket text-primary mr-2"></i> Prepare for roles like Frontend Developer & AI Web Engineer</div>
             <div class="marquee-item"><i class="fa-solid fa-building text-primary mr-2"></i> Curriculum tailored for top MNCs and Startups</div>
             <div class="marquee-item"><i class="fa-solid fa-laptop-code text-primary mr-2"></i> Master HTML, Tailwind, JavaScript & AI Tools</div>
             <div class="marquee-item"><i class="fa-solid fa-chart-line text-primary mr-2"></i> Average targeted packages: 4 LPA to 8 LPA</div>
@@ -220,7 +234,7 @@
                     <i class="fa-solid fa-graduation-cap text-primary mr-2"></i> SPIKE ACADEMY
                 </span>
                 <span>&copy; 2026 Spike Technologies. All rights reserved.</span>
-                <span>Udyam Registered Business under Ministry of MSME.</span>
+                <span>Udyam Registered Business under Ministry of MSME, Govt. of India.</span>
             </div>
             <div class="flex flex-col gap-3">
                 <a href="mailto:spiketechsupport@gmail.com" class="text-gray-300 hover:text-white text-sm bg-gray-800 px-4 py-2 rounded-lg border border-gray-700 transition flex items-center justify-center">
